@@ -63,4 +63,13 @@ const sendMoney = (money, info) => {
     return Object.assign(Object.assign({ money }, info), { course });
 };
 const moneySending = sendMoney(343, { name: "Dolon", age: 34, profession: "Web developer" });
-console.log(moneySending);
+const employFunc = (info) => {
+    return info;
+};
+const dolonEm = {
+    name: "Dolon Chandra",
+    job: "Software Engineer",
+    age: 22,
+    salary: "dolon"
+};
+console.log(employFunc(dolonEm));

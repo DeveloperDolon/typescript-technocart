@@ -133,4 +133,26 @@ const numArr: MyArray = [1, 2, 3, 4, 5];
     }
 
     const moneySending = sendMoney<number, Info>(343, {name: "Dolon", age: 34, profession: "Web developer"});
-    console.log(moneySending)
+    // console.log(moneySending);
+
+
+
+
+    // generics with constraints in typescript -------------------------------------->
+    interface EmployType {
+        name: string;
+        job: string;
+        age: number;
+    }
+    const employFunc = <T extends EmployType>(info: T) : T => {
+        return info;
+    }
+
+    const dolonEm = {
+        name: "Dolon Chandra",
+        job: "Software Engineer",
+        age: 22,
+        salary: "dolon"
+    }
+
+    console.log(employFunc(dolonEm));
