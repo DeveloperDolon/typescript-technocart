@@ -1,3 +1,4 @@
+
 // type assertion of typescript -------------->
 const multiplying = (value: string | number) : string | number | undefined => {
     if(typeof value === "number") {
@@ -72,8 +73,6 @@ const numArr: MyArray = [1, 2, 3, 4, 5];
       1234,
       { name: "persian", email: "a@gmail.com" },
     ];
-
-
 
     // generics with interfaces in typescript --------------->
     interface Developer<T, X = null> {
@@ -168,5 +167,28 @@ const numArr: MyArray = [1, 2, 3, 4, 5];
         price: 34334
     }
 
-    console.log(getProperty(car, "price"));
+    // console.log(getProperty(car, "price"));
 
+
+
+    // generics with promise type in typescript ---------------------------------------------->
+    type ResponseDataType = string;
+
+    const getResponseData = () : Promise<ResponseDataType> => {
+        return new Promise((resolve, reject) => {
+            const data : ResponseDataType = "This is my response.";
+
+            if(data) {
+                resolve(data);
+            } else {
+                reject("There are no data available!");
+            }
+        });
+    };
+
+    const invokeResponseFunc = async () => {
+        const response : ResponseDataType = await getResponseData();
+        console.log(response, "This");
+    }
+
+    invokeResponseFunc();
