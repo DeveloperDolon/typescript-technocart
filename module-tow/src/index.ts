@@ -155,4 +155,18 @@ const numArr: MyArray = [1, 2, 3, 4, 5];
         salary: "dolon"
     }
 
-    console.log(employFunc(dolonEm));
+    // console.log(employFunc(dolonEm));
+
+    // constrains using keyof
+    const getProperty = <T, X extends keyof T> (obj: T, key: X ) => {
+        return obj[key];
+    }
+
+    const car = {
+        name: "x-corolla",
+        brand: "X",
+        price: 34334
+    }
+
+    console.log(getProperty(car, "price"));
+

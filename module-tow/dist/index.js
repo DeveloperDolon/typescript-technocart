@@ -72,4 +72,14 @@ const dolonEm = {
     age: 22,
     salary: "dolon"
 };
-console.log(employFunc(dolonEm));
+// console.log(employFunc(dolonEm));
+// constrains using keyof
+const getProperty = (obj, key) => {
+    return obj[key];
+};
+const car = {
+    name: "x-corolla",
+    brand: "X",
+    price: 34334
+};
+console.log(getProperty(car, "price"));
