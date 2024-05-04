@@ -191,4 +191,16 @@ const numArr: MyArray = [1, 2, 3, 4, 5];
         console.log(response, "This");
     }
 
-    invokeResponseFunc();
+    // invokeResponseFunc();
+
+
+
+    // type condition with typescript -------------------------------------------------->
+    interface Seikh {
+        car: string;
+        bike: boolean;
+        name: string;
+    }
+
+    type CheckVehicle<T> = T extends keyof Seikh ? true : false;
+    type hasCar = CheckVehicle<"car">; 
