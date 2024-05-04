@@ -106,4 +106,14 @@ const invokeResponseFunc = () => __awaiter(void 0, void 0, void 0, function* () 
     const response = yield getResponseData();
     console.log(response, "This");
 });
-invokeResponseFunc();
+const areaInfo = {
+    height: "233",
+    name: "SOmeting",
+    width: "433"
+};
+const mySquire = {
+    height: 34,
+    width: 34,
+    area: 34,
+};
+console.log(mySquire);

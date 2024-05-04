@@ -204,3 +204,42 @@ const numArr: MyArray = [1, 2, 3, 4, 5];
 
     type CheckVehicle<T> = T extends keyof Seikh ? true : false;
     type hasCar = CheckVehicle<"car">; 
+
+
+
+    // mapped types in typescript -------------------------------------------------------------------->
+    type AreaType = {
+        height: number;
+        width: number;
+        name: string;
+    }
+
+    type HeightType = AreaType["name"]; // Look up type that's called.
+    type AreaString = {
+        [key in "height" | "width" | "name"] : string
+    }
+
+    const areaInfo : AreaString = { // one way of making mapped types in typescript
+        height: "233",
+        name: "SOmeting",
+        width: "433"
+    }
+
+    // method tow <---> <---> <---> <--->
+    interface SquireNumberType {
+        height: number;
+        width: number;
+        area: number;
+    }
+
+    type SquireStringType <T> = {
+        [key in keyof T] : T[key]
+    }
+
+    const mySquire : SquireStringType<SquireNumberType> = {
+        height: 34,
+        width: 34,
+        area: 34,
+    }
+
+    console.log(mySquire);
