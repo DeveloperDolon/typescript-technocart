@@ -12,7 +12,7 @@ class Animal {
 }
 const dog = new Animal("Bellu", "Ghew Ghew", 4);
 // dog.getSound();
-// <<_________________Method tow__________________>>
+// <<_________________>> (Method tow) <<__________________>>
 class AnimalTow {
     constructor(name, sound, age) {
         this.name = name;
@@ -24,4 +24,27 @@ class AnimalTow {
     }
 }
 const cat = new AnimalTow("Shukla", "Mew Mew", 3);
-cat.getSound();
+// cat.getSound();
+// <<_________________>> (Inheritance Concept with Typescript) <<__________________>>
+class Parent {
+    constructor(name, age, label) {
+        this.name = name;
+        this.age = age;
+        this.label = label;
+    }
+    getIdentity() {
+        console.log(`Name : ${this.name}, Age: ${this.age}, Label: ${this.label}`);
+    }
+}
+class Student extends Parent {
+    constructor(name, age, label, class_name) {
+        super(name, age, label);
+        this.class_name = class_name;
+    }
+    getStudentInfo() {
+        console.log(`${this.name} is read in class ${this.class_name}`);
+    }
+}
+const dolon = new Student("Dolon Roy", 22, "University", "Degree 1st Year");
+dolon.getIdentity();
+dolon.getStudentInfo();
