@@ -132,5 +132,29 @@ function showingWorking(student: Parent) {
     }
 }
 
-showingWorking(dolonRoy);
-showingWorking(jasimUddin);
+// showingWorking(dolonRoy);
+// showingWorking(jasimUddin);
+
+
+// <<_________________>> (Getter and setter method with Typescript) <<__________________>>
+class BankAccount {
+    constructor(public name: string, public age : string, protected id: number, private balance: number) {}
+
+    getInfo() {
+        console.log(`Name: ${this.name}, Age: ${this.age}, balance: ${this.balance}`)
+    }
+
+    get getBalance() {
+        return this.balance;
+    }
+
+    set setBalance(balanceTK : number) {
+        this.balance = balanceTK;
+    }
+
+    get getId() {
+        return this.id;
+    }
+}
+
+const dolo = new BankAccount("Dolon Chandra Roy", "22", 323, 343);
