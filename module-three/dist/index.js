@@ -59,4 +59,41 @@ const mobile = {
     brand: "Walton"
 };
 const s8Mini = getProduct(mobile);
-console.log(s8Mini);
+// console.log(s8Mini);
+// <<_________________>> (Instanceof and is gourd with Typescript) <<__________________>>
+class JobHolderStudent extends Parent {
+    constructor(name, age, label, job_role) {
+        super(name, age, label);
+        this.job_role = job_role;
+    }
+    getJobPosition() {
+        console.log(`${this.name} is a student with a job of ${this.job_role}!`);
+    }
+}
+class FourTwenteStudent extends Parent {
+    constructor(name, age, label, crime_role) {
+        super(name, age, label);
+        this.crime_role = crime_role;
+    }
+    getCrimePosition() {
+        console.log(`${this.name} is a student with a crime role of ${this.crime_role}!`);
+    }
+}
+const dolonRoy = new JobHolderStudent("Dolon Chandra Roy", 22, "BSC 1st year", "Frontend Developer");
+const jasimUddin = new FourTwenteStudent("Jasim Uddin", 24, "Houners 3rd Year", "Ganja Sebon");
+const isFourTwente = (student) => {
+    return student instanceof FourTwenteStudent;
+};
+const isJobHolder = (student) => {
+    return student instanceof JobHolderStudent;
+};
+function showingWorking(student) {
+    if (isJobHolder(student)) {
+        student.getJobPosition();
+    }
+    else if (isFourTwente(student)) {
+        student.getCrimePosition();
+    }
+}
+showingWorking(dolonRoy);
+showingWorking(jasimUddin);

@@ -28,7 +28,7 @@ class AnimalTow {
 
     getSound() {
         console.log(`The name of this animal is ${this.name} and sound is ${this.sound}`);
-    }   
+    }
 }
 
 const cat = new AnimalTow("Shukla", "Mew Mew", 3);
@@ -76,6 +76,7 @@ function getProduct (product: TvType | MobileType) : MobileType | TvType {
         product.size = 353;
         return product;
     }
+
     return product;
 }
 
@@ -86,4 +87,50 @@ const mobile : MobileType = {
 }
 
 const s8Mini = getProduct(mobile);
-console.log(s8Mini);
+// console.log(s8Mini);
+
+
+// <<_________________>> (Instanceof and is gourd with Typescript) <<__________________>>
+
+class JobHolderStudent extends Parent {
+    constructor(name: string, age: number, label: string, public job_role: string) {
+        super(name, age, label);
+    }
+
+    getJobPosition() {
+        console.log(`${this.name} is a student with a job of ${this.job_role}!`);
+    }
+}
+
+class FourTwenteStudent extends Parent {
+    constructor(name: string, age: number, label: string, public crime_role: string) {
+        super(name, age, label);
+    }
+
+    getCrimePosition() {
+        console.log(`${this.name} is a student with a crime role of ${this.crime_role}!`);
+    }
+}
+
+const dolonRoy = new JobHolderStudent("Dolon Chandra Roy", 22, "BSC 1st year", "Frontend Developer");
+const jasimUddin = new FourTwenteStudent("Jasim Uddin", 24, "Houners 3rd Year", "Ganja Sebon");
+
+const isFourTwente = (student: Parent) : student is FourTwenteStudent => {
+    return student instanceof FourTwenteStudent;
+}
+
+const isJobHolder = (student: Parent) : student is JobHolderStudent => {
+    return student instanceof JobHolderStudent;
+}
+
+
+function showingWorking(student: Parent) {
+    if(isJobHolder(student)) {
+        student.getJobPosition();
+    } else if (isFourTwente(student)) {
+        student.getCrimePosition();
+    }
+}
+
+showingWorking(dolonRoy);
+showingWorking(jasimUddin);
