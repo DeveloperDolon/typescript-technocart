@@ -46,5 +46,17 @@ class Student extends Parent {
     }
 }
 const dolon = new Student("Dolon Roy", 22, "University", "Degree 1st Year");
-dolon.getIdentity();
-dolon.getStudentInfo();
+function getProduct(product) {
+    if ("size" in product) {
+        product.size = 353;
+        return product;
+    }
+    return product;
+}
+const mobile = {
+    name: "Walton S8 Mini",
+    model: "S8 Mini",
+    brand: "Walton"
+};
+const s8Mini = getProduct(mobile);
+console.log(s8Mini);
